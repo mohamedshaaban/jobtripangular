@@ -24,5 +24,15 @@ export class UserService {
 
     return this.http.post(this.rootUrl + '/api/register', body);
   }
+  loginUser(user : User){
+    const body: User = {
+      name: user.name,
+      password: user.password,
+    };
 
+    return this.http.post(this.rootUrl + '/api/login', body);
+  }
+   getUserClaims(){
+   return  this.http.get(this.rootUrl+'/api/products');
+  }
 }

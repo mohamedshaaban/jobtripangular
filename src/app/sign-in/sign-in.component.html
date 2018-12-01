@@ -1,0 +1,21 @@
+
+	
+<form #loginForm="ngForm" class="col s12 white" (ngSubmit)="OnSubmit(loginForm)" >
+   <div class="row">
+     <div class="input-field col s12">
+       
+       <input type="text" #name ngModel name="name" placeholder="Name" required>
+     </div>
+   </div>
+   <div class="row">
+      <div class="input-field col s12">
+        
+        <input type="password" #password ngModel name="password" placeholder="password" required>
+      </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+          <button [disabled]="!loginForm.valid" class="btn-large btn-submit" type="submit">Login</button>
+        </div>
+      </div>
+</form>

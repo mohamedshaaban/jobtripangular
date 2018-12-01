@@ -1,0 +1,28 @@
+<nav>
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo center">
+      <i class="material-icons">cloud</i>Dotnet Mob App</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li>
+        <a (click)="Logout()">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="row">
+    
+      <div class="col-sm-4" *ngFor="let key of userClaims">
+           <img class="img-responsive" width="150px" height="150px" src="{{key.image}}" alt="{{key.name}}" style="">
+         <div class="clearfix visible-sm"></div>
+         <h4 class="media-heading">{{key.name}}
+          <a href="#" target="_parent">{{key.name}}
+              <small class="pull-right">{{key.price}}</small></a></h4>
+
+         
+         <p class="hidden-xs">{{key.detail}}</p>
+         </div>
+    
+          
+
+  
+</div>
