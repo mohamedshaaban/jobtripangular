@@ -3,6 +3,7 @@ import { UserService } from '../user.service';
 import { User } from '../user.model';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { NgForm }   from '@angular/forms';
 
 @Component({
   selector: 'app-sign-in',
@@ -18,8 +19,8 @@ export class SignInComponent implements OnInit {
 
 
 
-  OnSubmit(form: ngForm) {
-    this.userService.loginUser(form.value).subscribe((data : any)=>{
+  OnSubmit(name,password){
+     this.userService.userAuthentication(name,password).subscribe((data : any)=>{
       localStorage.setItem('userToken',data.access_token);
       this.router.navigate(['/home']);
     },
@@ -27,6 +28,6 @@ export class SignInComponent implements OnInit {
       this.isLoginError = true;
     });
   }
-
+ 
   
 }

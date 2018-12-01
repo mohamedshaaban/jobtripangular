@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import { http,HttpClient } from '@angular/common/http';
-import {  Response } from "@angular/http";
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {Observable} from 'rxjs';
 import { map } from 'rxjs/operators';
 import { User } from './user.model';
+
+
 
 @Injectable()
 export class UserService {
@@ -24,10 +25,10 @@ export class UserService {
 
     return this.http.post(this.rootUrl + '/api/register', body);
   }
-  loginUser(user : User){
-    const body: User = {
-      name: user.name,
-      password: user.password,
+userAuthentication(name, password) {
+    const body = {
+      name: name,
+      password: password
     };
 
     return this.http.post(this.rootUrl + '/api/login', body);
